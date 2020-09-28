@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
    if (argc < 2 || argc > 2) 
    {
        cout << "usage(使用方法):" << endl;
-       cout << " " << argv[0] << " user name" << endl;
+       cout << "   " << argv[0] << " user name" << endl;
    }
    else
    {
