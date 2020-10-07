@@ -16,7 +16,7 @@ void usage(const string& cmd) {
     };
     
     cout << "Usage(輸入方法）: \n";
-    cout << "  "  << " -h host（主人姓名） -v visitor（拜訪者姓名）\n";
+    cout << "  "<< cmd << " -h host（主人姓名） -v visitor（拜訪者姓名）\n";
     
     
     for (int i = 0; i < (sizeof(opt) / sizeof(string)); i++) 
