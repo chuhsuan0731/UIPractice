@@ -12,7 +12,7 @@ void usage(const string& cmd) {
         "where\n",
         " -h host      the host name.\n",
         " -v visitor   the guest name.\n",
-        " -u usage     the usage.\n",
+        " -? usage     the usage.\n",
     };
     
     cout << "Usage(輸入方法）: \n";
@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
     {
         string arg =argv[1];
         
-        if(arg == "-u")
+        if(arg == "-?")
         {
             usage(argv[0]);
         }
