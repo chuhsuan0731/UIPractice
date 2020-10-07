@@ -7,56 +7,54 @@ void error(const string& msg) {
 }
 
 void usage(const string& cmd) {
-    string opt[] = {
+    string opt[] = 
+    {
         "where\n",
         " -h host      the host name.\n",
         " -v visitor   the guest name.\n",
-        " -u usage      the usage.\n",
+        " -u usage     the usage.\n",
     };
     
     cout << "Usage(輸入方法）: \n";
     cout << "  "  << " -h host（主人姓名） -v visitor（拜訪者姓名）\n";
-    for (int i = 0; i < (sizeof(opt) / sizeof(string)); i++) {
+    
+    
+    for (int i = 0; i < (sizeof(opt) / sizeof(string)); i++) 
+    {
         cout << opt[i];
     }
     exit(-1);
 }
 
-
-int main(int argc, char *argv[]) 
+void welcome(const string& host, const string& guest) 
 {
-    string usage;
-    if (argc != 3) {
-        error("Wrong number of parameters.");
-        usage(argv[0]);
-    }
-    
-    for (int i = 1; i < argc; i = i + 2) {
-        string arg = argv[i];
-
-        if (arg == "-u") {
-            usage = argv[i + 1];
-            cout << "Usage(輸入方法）: \n";
-            cout << "  "  << " -h host（主人姓名） -v visitor（拜訪者姓名）\n"
-        }
-        else {
-            error("Unknown options: " + arg);
-            usage(argv[0]);
-    return 0;
-}
-
-void welcome(const string& host, const string& guest) {
     cout << "Hello, " << guest << ".\n";
-    cout << "This is " << host << ", welcome.\n";
+    cout << "This is " << host << ", welcome!!!\n";
 }
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[])
+{
     string host;
     string guest;
 
-    if (argc != 5) {
+    if (argc != 5 && argc!= 2) 
+    {
         error("Wrong number of parameters.");
         usage(argv[0]);
+    }
+    if (argc = 2)
+    {
+        string arg =argv[1];
+        
+        if(arg == "-u")
+        {
+            usage(argv[0]);
+        }
+        else
+        {
+            error("Wrong number of parameters.");
+            usage(argv[0]);
+        }
     }
 
     for (int i = 1; i < argc; i = i + 2) {
