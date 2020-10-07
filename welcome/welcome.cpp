@@ -11,21 +11,39 @@ void usage(const string& cmd) {
         "where\n",
         " -h host      the host name.\n",
         " -v visitor   the guest name.\n",
-        " -h help      the usage.\n",
+        " -u usage      the usage.\n",
     };
-   
-   
+    
+    cout << "Usage(輸入方法）: \n";
+    cout << "  "  << " -h host（主人姓名） -v visitor（拜訪者姓名）\n";
     for (int i = 0; i < (sizeof(opt) / sizeof(string)); i++) {
         cout << opt[i];
     }
-
     exit(-1);
 }
 
-if (arg =="-h"){
-      cout << "Usage(輸入方法）: \n";
-      cout << "  " << cmd << " -h host（主人姓名） -v visitor（拜訪者姓名）\n";
 
+int main(int argc, char *argv[]) 
+{
+    string usage;
+    if (argc != 3) {
+        error("Wrong number of parameters.");
+        usage(argv[0]);
+    }
+    
+    for (int i = 1; i < argc; i = i + 2) {
+        string arg = argv[i];
+
+        if (arg == "-u") {
+            usage = argv[i + 1];
+            cout << "Usage(輸入方法）: \n";
+            cout << "  "  << " -h host（主人姓名） -v visitor（拜訪者姓名）\n"
+        }
+        else {
+            error("Unknown options: " + arg);
+            usage(argv[0]);
+    return 0;
+}
 
 void welcome(const string& host, const string& guest) {
     cout << "Hello, " << guest << ".\n";
