@@ -17,16 +17,12 @@ void error(const std::string& cmd, const std::string& msg) {
 
 void numInBase(const std::string& dec, const std::string& base, const std::string& num)
 {
-    std::cout
-        << "Decimal number "
-        << dec << "in"
-        << base << ":"
-        << num
-        << std::endl;
+    std::cout<< "Decimal number "<< dec << "in"<< base << ":" << num << std::endl;
 }
 
 
-std::string dec2bin(const std::string& dec) {
+std::string dec2bin(const std::string& dec)
+{
     std::stringstream bin;
 
     bin << std::bitset<16>(std::stoi(dec));
@@ -37,7 +33,8 @@ std::string dec2bin(const std::string& dec) {
 } // decToBin()
 
 
-std::string dec2hex(const std::string& dec) {
+std::string dec2hex(const std::string& dec) 
+{
     std::stringstream hex;
 
     hex << "0x" << std::hex << std::stoi(dec);
@@ -48,7 +45,8 @@ std::string dec2hex(const std::string& dec) {
 } // decToHex()
 
 
-std::string dec2oct(const std::string& dec) {
+std::string dec2oct(const std::string& dec) 
+{
     std::stringstream oct;
 
     oct << "0" << std::oct << std::stoi(dec);
@@ -61,17 +59,12 @@ std::string dec2oct(const std::string& dec) {
 
 void numInDec(const std::string& base, const std::string& num, const std::string& dec)
 {
-    std::cout
-        << base
-        << " number "
-        << num
-        << " in decimal: "
-        << dec
-        << std::endl;
+    std::cout << base  << " number "<< num<< " in decimal: "<< dec<< std::endl;
 } // numInDec()
 
 
-std::string bin2dec(const std::string& bin) {
+std::string bin2dec(const std::string& bin)
+{
     std::stringstream dec;
 
     dec << std::stol(bin, nullptr, 2);
@@ -82,7 +75,8 @@ std::string bin2dec(const std::string& bin) {
 } // bin2dec()
 
 
-std::string oct2dec(const std::string& oct) {
+std::string oct2dec(const std::string& oct) 
+{
     std::stringstream dec;
 
     dec << std::stol(oct, nullptr, 8);
@@ -93,7 +87,8 @@ std::string oct2dec(const std::string& oct) {
 } // oct2dec()
 
 
-std::string hex2dec(const std::string& hex) {
+std::string hex2dec(const std::string& hex) 
+{
     std::stringstream dec;
 
     dec << std::stol(hex, nullptr, 16);
@@ -104,7 +99,8 @@ std::string hex2dec(const std::string& hex) {
 } // hex2dec()
 
 
-bool is_number(const std::string& str, int base = 10) {
+bool is_number(const std::string& str, int base = 10) 
+{
     size_t sz;
 
     try {
@@ -118,7 +114,8 @@ bool is_number(const std::string& str, int base = 10) {
 } // is_number()
 
 
-bool test_dec_bin(const std::string& cmd, const std::string& dec) {
+bool test_dec_bin(const std::string& cmd, const std::string& dec) 
+{
     std::string bin;
     std::string num;
 
@@ -134,7 +131,8 @@ bool test_dec_bin(const std::string& cmd, const std::string& dec) {
 } // test_dec_bin();
 
 
-bool test_dec_hex(const std::string& cmd, const std::string& dec) {
+bool test_dec_hex(const std::string& cmd, const std::string& dec)
+{
     std::string hex;
     std::string num;
 
@@ -150,7 +148,8 @@ bool test_dec_hex(const std::string& cmd, const std::string& dec) {
 } // test_dec_hex();
 
 
-bool test_dec_oct(const std::string& cmd, const std::string& dec) {
+bool test_dec_oct(const std::string& cmd, const std::string& dec) 
+{
     std::string oct;
     std::string num;
 
@@ -166,7 +165,8 @@ bool test_dec_oct(const std::string& cmd, const std::string& dec) {
 } // test_dec_oct();
 
 
-void sample_usage(const std::string& cmd, const std::string& dec) {
+void sample_usage(const std::string& cmd, const std::string& dec) 
+{
     std::cout << "Examples: " << std::endl << std::endl;
 
     test_dec_bin(cmd, dec) ? (void)0 : error(cmd, "Dec-Bin converting error!");
@@ -175,7 +175,8 @@ void sample_usage(const std::string& cmd, const std::string& dec) {
 } // sample_usage()
 
 
-void usage(const std::string& cmd) {
+void usage(const std::string& cmd) 
+{
     std::string num;
 
     std::cout << cmd << " v0.1.0 " << std::endl;
@@ -194,7 +195,8 @@ void usage(const std::string& cmd) {
 } // usage()
 
 
-void args_dump(int argc, char* argv[]) {
+void args_dump(int argc, char* argv[]) 
+{
     // 列印所有的 *命令列參數*
     std::cout << "command line arguments: argv[i]" << std::endl;
 
@@ -216,7 +218,7 @@ void args_dump(int argc, char* argv[]) {
  **/
 int main(int argc, char* argv[])
 {
-    std:: cout << "列印所有的 *命令列參數*\n";
+    std:: cout << "列印所有的 *命令列參數*\n"<<std::endl;
     args_dump(argc, argv);
 
     std::string arg = argv[1];
